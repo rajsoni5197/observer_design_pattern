@@ -1,0 +1,32 @@
+@startuml observer_design_pattern
+
+'publisher
+
+class Iphone15 
+{
+    +Iphone15():void
+    +sub[]:Subscribers
+    +informSubscribers():void
+}
+
+Interface Subscribers
+{
+    +name: string;
+    +update():void;
+
+}
+
+class Raj extends Subscribers 
+{
+    Raj():void
+}
+class Ankit extends Subscribers
+{
+    Ankit:void
+}
+Iphone15-> Subscribers
+class Client 
+{
+    Client():void
+}
+Client->Iphone15
